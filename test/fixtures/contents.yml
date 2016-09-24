@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-<<<<<<< HEAD
   title: MyText
   url: MyText
   summary: MyText
@@ -20,21 +19,4 @@ two:
   trend: MyText
   time: 2016-09-01 16:56:33
   author: MyText
-=======
-  title: MyString
-  url: MyString
-  summary: MyText
-  body: MyText
-  trend: MyString
-  time: 2016-09-01 21:17:15
-  author: MyString
 
-two:
-  title: MyString
-  url: MyString
-  summary: MyText
-  body: MyText
-  trend: MyString
-  time: 2016-09-01 21:17:15
-  author: MyString
->>>>>>> 8b90bb1d5b15edd7e4fb1e1d8785c142fcb30872
