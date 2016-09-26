@@ -1,5 +1,7 @@
 <h1>Newstyle</h1>
-<% @contents.each do |i| %>
-  <p><%= i.title %></p>
-  <p><%= i.summary %></p>
+<% @contents.each do |content| %>
+  <p><%= content.title %></p>
+  <p><%= content.summary %></p>
+  <p><%= content.summary %></p>
+  <p><%= content.created_at%></p>
 <% end %>
