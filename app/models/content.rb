@@ -4,12 +4,15 @@ class Content < ActiveRecord::Base
 
 #When content is created
   #
-after_create :adding_relationship_score
+after_save :adding_relationship_score
 
 private
 def adding_relationship_score
   #write down here to action when the database new content is added
-end
+  id = Content.last.id  # get the least aticles id 
+  logger.debug(last +"を挿入しました")
+
+end 
 
 end
 
