@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+
+  get 'search' => 'search#theme'
+  get 'search/theme' => 'search#theme'
+
+  get 'search/tag' => 'search#tag'
+
+  get 'search/article' => 'search#article'
+
   #get 'top/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
