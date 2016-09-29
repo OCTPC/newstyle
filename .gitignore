@@ -7,6 +7,8 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore 
+*.DS_Store
 # Ignore gem libraries.
 /vendor/bundle
 
