@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'category' => 'category#index'
+  get 'category/:category' => 'category#show'
   get 'search' => 'search#theme'
   get 'search/theme' => 'search#theme'
 

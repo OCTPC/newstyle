@@ -1,9 +1,8 @@
-
-
     <section class="articles">
-      <h2>最新の記事</h2>
+      <h2><%= params[:category] =%></h2>
       <!-- start of article -->
-      <%= page_entries_info @contents %>
+       <%= page_entries_info @contents %>
+
       <% @contents.each do |content| %>
       <article>
         <div class="article-title">
