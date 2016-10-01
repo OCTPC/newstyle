@@ -1,0 +1,15 @@
+<section class="articles">
+  <!-- start of article -->
+  <article>
+    <div class="article-title">
+      <div class="page-header">
+        <h3><%= @content.title %></h3>
+        <span><%= @content.author %></span>
+      </div>
+    </div>
+    <div class="article-body">
+      <%= simple_format(@content.summary) =%>
+    </div>
+  </article>
+  <!-- end of articles -->
+</section>

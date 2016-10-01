@@ -42,9 +42,9 @@
                             <li><%= link_to 'ゲーム','/category/game' =%></li>
                             <li><%= link_to 'アニメ','/category/anime' =%></li>
                         </ul>
-                        <form action="/search" class="navbar-form navbar-right" >
+                        <form action="/search" method="get" class="navbar-form navbar-right" >
                             <div class="form-group">
-                                <input class="form-control" placeholder="キーワードを入力" type="text">
+                                <input class="form-control" placeholder="キーワードを入力" name="query" type="text">
                             </div><button class="btn btn-default" type="submit">検索</button>
                         </form>
                     </div>

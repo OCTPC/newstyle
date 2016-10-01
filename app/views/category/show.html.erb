@@ -1,15 +1,18 @@
     <section class="articles">
-      <h2><%= params[:category] =%></h2>
+       <div class="page-header">
+          <h2><%= params[:category] %></h2>
+        </div>
       <!-- start of article -->
        <%= page_entries_info @contents %>
 
       <% @contents.each do |content| %>
       <article>
         <div class="article-title">
-          <h3><%= content.title =%></h3>
+          <h3><%= content.title %></h3>
+          <span><%= content.author %></span>
         </div>
         <div class="article-body">
-          <%= content.summary =%>
+          <%= simple_format(content.summary) %>
         </div>
       </article>
       <% end %>

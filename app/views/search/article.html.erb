@@ -1,2 +1,28 @@
-<h1>Search#article</h1>
-<p>Find me in app/views/search/article.html.erb</p>
+<section class="articles">
+  <div class="page-header">
+    <h2>検索結果<h2>
+    <span><%= params[:query] %></span>
+  </div>
+  <!-- start of article -->
+  <%= page_entries_info @contents %>
+
+  <% @contents.each do |content| %>
+    <article>
+      <div class="article-title">
+        <h3><%= content.title %></h3>
+        <span><%= content.author %></span>
+      </div>
+      <div class="article-body">
+        <%= simple_format(content.summary) %>
+      </div>
+    </article>
+  <% end %>
+
+</section>
+<!-- end of articles -->
+<div class="text-center">
+  <%= paginate @contents %>
+</div>
+<!-- end of paganetion -->
+
+

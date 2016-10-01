@@ -1,24 +1,25 @@
-
-
-    <section class="articles">
-      <h2>最新の記事</h2>
-      <!-- start of article -->
-      <%= page_entries_info @contents %>
-      <% @contents.each do |content| %>
-      <article>
-        <div class="article-title">
-          <h3><%= content.title =%></h3>
+<section class="articles">
+  <!-- <h2>最新の記事</h2> -->
+  <!-- start of article -->
+  <% @contents.each do |content| %>
+    <article>
+      <div class="article-title">
+        <div class="page-header">
+          <h3><%= content.title %></h3>
+          <span><%= content.author %></span>
         </div>
-        <div class="article-body">
-          <%= content.summary =%>
-        </div>
-      </article>
-      <% end %>
+      </div>
+      <div class="article-body">
+        <%= simple_format(content.summary) %>
+      </div>
+      <%= link_to '関連記事を表示',entry_path(@contents),{:class => "btn btn-default"}  %>
+    </article>
+  <% end %>
 
-    </section>
-    <!-- end of articles -->
-    <div class="text-center">
-      <%= paginate @contents %>
-    </div>
-    <!-- end of paganetion -->
+</section>
+<!-- end of articles -->
+<div class="text-center">
+  <%= paginate @contents %>
+</div>
+<!-- end of paganetion -->
 

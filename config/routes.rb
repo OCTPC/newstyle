@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :entry
+
+  #match 'entry/(:id)' => 'entry#show',as:'entry'
+  #get 'entry/(:id)' => 'entry#show'
   get 'category/:category' => 'category#show'
   get 'search' => 'search#theme'
   get 'search/theme' => 'search#theme'
