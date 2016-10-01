@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+  <head>
     <title>NewStyle</title>
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -15,89 +15,89 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
-<body>
-  
-    
+  </head>
+  <body>
+
+
     <div class="container-fluid" id="wrapper">
       <div class="row">
-      
-             <header class="header">
-            <div class="container">
-                <nav class="navbar navbar-default">
-                    <div class="navbar-header">
-                        <button class="navbar-toggle" data-target="#navbar" data-toggle="collapse" type="button">
-                          <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                        </button> <a class="navbar-brand active" href="/">new S tyle</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <ul class="nav navbar-nav">
-                            <li><%= link_to 'ニュース','/category/news' =%></li>
-                            <li><%= link_to 'エンタメ','/category/entertainment' =%></li>
-                            <li><%= link_to 'スポーツ','/category/sport' =%></li>
-                            <li><%= link_to 'ライフスタイル','/category/lifestyle' =%></li>
-                            <li><%= link_to 'IT','/category/technology' =%></li>
-                            <li><%= link_to 'グルメ','/category/gourmet' =%></li>
-                            <li><%= link_to '旅行','/category/travel' =%></li>
-                            <li><%= link_to 'ゲーム','/category/game' =%></li>
-                            <li><%= link_to 'アニメ','/category/anime' =%></li>
-                        </ul>
-                        <form action="/search" method="get" class="navbar-form navbar-right" >
-                            <div class="form-group">
-                                <input class="form-control" placeholder="キーワードを入力" name="query" type="text">
-                            </div><button class="btn btn-default" type="submit">検索</button>
-                        </form>
-                    </div>
-                </nav>
-            </div>
+
+        <header class="header">
+          <div class="container">
+            <nav class="navbar navbar-default">
+              <div class="navbar-header">
+                <button class="navbar-toggle" data-target="#navbar" data-toggle="collapse" type="button">
+                  <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand active" href="/">new S tyle</a></h1>
+              </div>
+              <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                  <li><%= link_to 'ニュース','/category/news' =%></li>
+                  <li><%= link_to 'エンタメ','/category/entertainment' =%></li>
+                  <li><%= link_to 'スポーツ','/category/sport' =%></li>
+                  <li><%= link_to 'ライフスタイル','/category/lifestyle' =%></li>
+                  <li><%= link_to 'IT','/category/technology' =%></li>
+                  <li><%= link_to 'グルメ','/category/gourmet' =%></li>
+                  <li><%= link_to '旅行','/category/travel' =%></li>
+                  <li><%= link_to 'ゲーム','/category/game' =%></li>
+                  <li><%= link_to 'アニメ','/category/anime' =%></li>
+                </ul>
+                <form action="/search" method="get" class="navbar-form navbar-right" >
+                  <div class="form-group">
+                    <input class="form-control" placeholder="キーワードを入力" name="query" type="text">
+                  </div><button class="btn btn-default" type="submit">検索</button>
+                </form>
+              </div>
+            </nav>
+          </div>
         </header>
         <div id="contents" class="container">
 
           <div id="main" class=" col-xs-12 col-md-8 col-lg-8">
             <%= yield %>
-          
 
+
+          </div>
+          <!-- end of main -->
+          <!-- start of sidebar -->
+          <nav class=" sidebar col-xs-12 col-md-4 col-lg-4 ">
+
+            <div class="list-group">
+              <div class="banner">
+                <h4><span class="glyphicon glyphicon-tag" style="width:30px; height:30px;" aria-hidden="true"></span>タグ検索</h4>
+              </div>
+
+              <section>
+                <h4>人気</h4>
+                <ul>
+                  <li><a href="#title">＜御嶽山噴火２年＞追悼式　遺族、地元住民ら参列</a></li>
+                  <li><a href="#title">ミニバイク少年が娯楽施設内を走行　建造物侵入容疑で捜査　戸部署</a></li>
+                  <li><a href="#title"> 「新選組」斎藤一の肖像写真発見　当時最強の剣士の一人</a></li>
+                  <li><a href="#title"> 被災地の秋サケ　試練の初水揚げ</a></li>
+                  <li><a href="#title"> イチロー、代打で左前打　事故死のエースを弔う一打＆勝利</a></li> 
+                </ul>
+              </section>
+
+              <section>
+                <h4>おすすめ</h4>
+                <ul>
+                  <li><a href="#title">イチロー、代打で左前打　事故死のエースを弔う一打＆勝利</a></li>
+                  <li><a href="#title">あまりにも悲しい日　フェルナンデス投手を悼む</a></li>
+                  <li><a href="#title">ラミレス監督　番長にも非情采配予告…先発予定29日ヤクルト戦は勝利最優先</a></li>
+                  <li><a href="#title">岸、メジャー移籍も「なくはない」　２７日は西武最後のマウンドか</a></li>
+                  <li><a href="#title">日ハム、大逆転の4年ぶりリーグVへ王手　ついにマジック1、27日にも優勝</a></li>
+                </ul> 
+              </section>
             </div>
-  <!-- end of main -->
-  <!-- start of sidebar -->
- <nav class=" sidebar col-xs-12 col-md-4 col-lg-4 ">
-  
-     <div class="list-group">
-      <div class="banner">
-        <h4><span class="glyphicon glyphicon-tag" style="width:30px; height:30px;" aria-hidden="true"></span>タグ検索</h4>
-      </div>
+          </nav>
 
-      <section>
-        <h4>人気</h4>
-        <ul>
-          <li><a href="#title">＜御嶽山噴火２年＞追悼式　遺族、地元住民ら参列</a></li>
-          <li><a href="#title">ミニバイク少年が娯楽施設内を走行　建造物侵入容疑で捜査　戸部署</a></li>
-          <li><a href="#title"> 「新選組」斎藤一の肖像写真発見　当時最強の剣士の一人</a></li>
-          <li><a href="#title"> 被災地の秋サケ　試練の初水揚げ</a></li>
-          <li><a href="#title"> イチロー、代打で左前打　事故死のエースを弔う一打＆勝利</a></li> 
-        </ul>
-      </section>
 
-       <section>
-        <h4>おすすめ</h4>
-        <ul>
-          <li><a href="#title">イチロー、代打で左前打　事故死のエースを弔う一打＆勝利</a></li>
-          <li><a href="#title">あまりにも悲しい日　フェルナンデス投手を悼む</a></li>
-          <li><a href="#title">ラミレス監督　番長にも非情采配予告…先発予定29日ヤクルト戦は勝利最優先</a></li>
-          <li><a href="#title">岸、メジャー移籍も「なくはない」　２７日は西武最後のマウンドか</a></li>
-          <li><a href="#title">日ハム、大逆転の4年ぶりリーグVへ王手　ついにマジック1、27日にも優勝</a></li>
-        </ul> 
-     </section>
-    </div>
-     </nav>
-
-  
         </div>
-       <!-- end of row -->
-</div>
+        <!-- end of row -->
       </div>
     </div>
-<!-- end of warraper -->
+    <!-- end of warraper -->
 
-</body>
+  </body>
 </html>
