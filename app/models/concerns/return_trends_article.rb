@@ -9,7 +9,7 @@ require 'open-uri'
 module ReturnTrendArticles
   extend ActiveSupport::Concern
 
-  def get_trends_articles(genre_id)
+  def get_trend_articles(genre_id)
     #init
     n = 15 #初期の最大記事取得数
     arry = []
