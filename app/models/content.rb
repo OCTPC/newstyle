@@ -1,8 +1,8 @@
 class Content < ActiveRecord::Base
   include XmlParser
   include ReturnRelationshipScore
-  has_many :a_relationship, :class_name => 'Content', :foreign_key => 'a_id', :dependent => :destroy
-  has_many :b_relationship, :class_name => 'Content', :foreign_key => 'b_id', :dependent => :destroy
+  has_many :relationship, :class_name => 'Content', :foreign_key => 'a_id', :dependent => :destroy
+  has_many :relationship, :class_name => 'Content', :foreign_key => 'b_id', :dependent => :destroy
 
   has_many :keyword, :class_name => 'Keyword', :foreign_key =>'content_id', :dependent => :destroy
   #When content is created
