@@ -1,5 +1,6 @@
 #return_summary.rb
 require 'net/http'
+require 'nokogiri'
 
 module ReturnSummary
   extend ActiveSupport::Concern
@@ -9,6 +10,8 @@ module ReturnSummary
     debug = 0
     uri = URI('http://www.47news.jp/cgi-bin/ra/meta_ex.cgi')
     res = Net::HTTP.post_form(uri, 'title' => title, 'body' => body, 'summaxlength' => '250')
-    return res.body
+    doc = Nokogiri::HTML.parse("<html>"+res.body+"</html>", nil, "utf-8")
+    summary=doc.css("SUMMARY").inner_text
+    return summary
   end
 end
