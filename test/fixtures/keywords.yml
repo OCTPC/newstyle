@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content_id: 1
+  keyword: MyString
+  score: 1.5
+
+two:
+  content_id: 1
+  keyword: MyString
+  score: 1.5
