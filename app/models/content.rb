@@ -10,41 +10,24 @@ class Content < ActiveRecord::Base
 
   has_many :keyword, :class_name => 'Keyword', :foreign_key =>'content_id', :dependent => :destroy
 
-  #def get_trends
+   #def get_trends
     
-    ary = get_trend_articles(1)
+    ary = get_trend_articles(5)
     #logger.debug(pp ary)
     #
     (ary.length).times do |j|
-      title,body  = get_article(ary[j])
-      #logger.debug(p title, body)
-=begin
+      title,body,url  = get_article(ary[j])
        q = Content.new
-        q.title = title
-        q.body = body
-        q.category = "news"
+        q.title = title.force_encoding("utf-8")
+        q.body = body.force_encoding("utf-8")
+        q.url = url.force_encoding('UTF-8')
+        q.summary = get_summary(title,body).force_encoding('UTF-8')
+        q.category = "technology"
         q.save
-
-
-      
     end
-
-
-    ary.each do |i|
-      title,body = get_article(i)
-      logger.debug(p ary)
-
-      (ary.length).times do |j|
-        q = Content.new
-        q.title = title[i
-        q.body = body
-        q.save
-      end
-     end
-
-=end
     
-  #end
+    
+ # end
   #When content is created
   #
   #after_save :adding_relationship_score
@@ -56,6 +39,6 @@ class Content < ActiveRecord::Base
     #logger.debug(last +"を挿入しました")
 
   #end 
-    end
+    
 end
 
