@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/mono0x/extractcontent.git
+  revision: 6dc303ab5ad90ada73a8b63c29dc0b99591afabd
+  specs:
+    extractcontent (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -168,6 +174,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
+  extractcontent!
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

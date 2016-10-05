@@ -9,6 +9,8 @@ gem 'sass-rails', '>= 3.2'
 gem 'mecab'
 # Use natto
 gem 'natto'
+# Use extractcontent
+gem "extractcontent", github: "mono0x/extractcontent"
 # Use 
 gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
