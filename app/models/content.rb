@@ -1,6 +1,6 @@
 class Content < ActiveRecord::Base
   extend XmlParser
-  extend ReturnRelationshipScore
+ # extend ReturnRelationshipScore
   extend ReturnSummary
   extend ReturnKeyword
   extend ReturnTrendArticles
