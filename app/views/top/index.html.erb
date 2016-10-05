@@ -10,9 +10,9 @@
         </div>
       </div>
       <div class="article-body">
-        <%= simple_format(content.summary) %>
+        <%= simple_format(content.body) %>
       </div>
-      <%= link_to '関連記事を表示',entry_path(@contents),{:class => "btn btn-default"}  %>
+      <%= link_to '関連記事を表示',entry_path(content),{:class => "btn btn-default"}  %>
     </article>
   <% end %>
 
