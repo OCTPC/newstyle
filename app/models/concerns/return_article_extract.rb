@@ -19,7 +19,7 @@ module ReturnArticleExtract
       html = html.scrub('?')
       body, title = ExtractContent.analyse(html)
 
-      return  title,body
+      return  title,body,url
     end
   end
 end
