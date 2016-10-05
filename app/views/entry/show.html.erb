@@ -8,9 +8,12 @@
       </div>
     </div>
     <div class="article-body">
-      <%= simple_format(@content.summary) =%>
+      <%= simple_format(@content.body) =%>
+      <%= link_to '詳しくみる',@content.url,{:class => "btn btn-default"}  %>
+
     </div>
   </article>
+  
   <!-- end of articles -->
 </section>
 
