@@ -1,6 +1,6 @@
 class AddCategoryToContents < ActiveRecord::Migration
   def change
-    create_table :categories do |t|
+    create_table :contents do |t|
       t.string :content
       t.string :category
       t.string :string
