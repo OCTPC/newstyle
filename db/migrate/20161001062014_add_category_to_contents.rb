@@ -1,11 +1,17 @@
 class AddCategoryToContents < ActiveRecord::Migration
   def change
     create_table :contents do |t|
-      t.string :content
-      t.string :category
-      t.string :string
-
-      t.timestamps null: false
+      t.text     :title
+      t.text     :url
+      t.text     :summary
+      t.text     :body
+      t.text     :keyword
+      t.text     :trend
+      t.datetime :time
+      t.text     :author
+      t.datetime :created_at, null: false
+      t.datetime :updated_at, null: false
+      t.string   :category
     end
   end
 end
