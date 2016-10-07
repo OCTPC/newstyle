@@ -12,7 +12,7 @@ class Content < ActiveRecord::Base
 
    #def get_trends
     
-    ary = get_trend_articles(5)
+    ary = get_trend_articles(1)
     #logger.debug(pp ary)
     #
     (ary.length).times do |j|
@@ -21,11 +21,16 @@ class Content < ActiveRecord::Base
         q.title = title.force_encoding("utf-8")
         q.body = body.force_encoding("utf-8")
         q.url = url.force_encoding('UTF-8')
-        q.summary = get_summary(title,body).force_encoding('UTF-8')
-        q.category = "technology"
+        summary = get_summary(title,body).force_encoding('UTF-8')
+        if summary=="" then
+          next
+        else
+          q.summary=summary
+        end
+        q.category = "news"
         q.save
     #end
-    @least = Content.order(:created_at).limit(10)  #end
+    #@least = Content.order(:created_at).limit(10)  #end
     
   end
   #When content is created

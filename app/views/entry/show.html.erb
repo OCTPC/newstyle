@@ -9,7 +9,7 @@
     </div>
     <div class="article-body">
       <%= simple_format(@content.summary) =%>
-      <%= link_to '詳しくみる',@content.url,{:class => "btn btn-default"}  %>
+      <%= link_to '詳しくみる',@content.url,{:class => "btn btn-default",:target=>["_blank"]} %>
 
     </div>
   </article>
@@ -17,7 +17,7 @@
   <!-- end of articles -->
 </section>
 
-<section class="related-article">
+<section class="related-article" hidden>
 
   <div class="row">
     <div class="col-xs-12 col-lg-12">

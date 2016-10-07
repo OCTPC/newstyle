@@ -11,7 +11,7 @@ class CategoryController < ApplicationController
   private 
   def set_category
     category = params[:category]
-    @contents =Content.where(:category => category)
+    @contents =Content.where(:category => category).order(created_at: :desc)
     @contents = Kaminari.paginate_array(@contents).page(params[:page]).per(10)
   end
 end
