@@ -10,7 +10,7 @@ class Content < ActiveRecord::Base
 
   has_many :keyword, :class_name => 'Keyword', :foreign_key =>'content_id', :dependent => :destroy
 
-   def get_trends
+   #def get_trends
     
     ary = get_trend_articles(5)
     #logger.debug(pp ary)
@@ -24,8 +24,8 @@ class Content < ActiveRecord::Base
         q.summary = get_summary(title,body).force_encoding('UTF-8')
         q.category = "technology"
         q.save
-    end
-    
+    #end
+    @least = Content.order(:created_at).limit(10)  #end
     
   end
   #When content is created
@@ -39,6 +39,6 @@ class Content < ActiveRecord::Base
     #logger.debug(last +"を挿入しました")
 
   #end 
-    
+  
 end
 
