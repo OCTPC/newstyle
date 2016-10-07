@@ -10,7 +10,7 @@ class Content < ActiveRecord::Base
 
   has_many :keyword, :class_name => 'Keyword', :foreign_key =>'content_id', :dependent => :destroy
 
-   #def get_trends
+   def get_trends
     
     ary = get_trend_articles(5)
     #logger.debug(pp ary)
@@ -27,7 +27,7 @@ class Content < ActiveRecord::Base
     end
     
     
- # end
+  end
   #When content is created
   #
   #after_save :adding_relationship_score

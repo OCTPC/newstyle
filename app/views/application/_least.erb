@@ -1,0 +1,10 @@
+<section>
+<h4>最新</h4>
+<ul>
+<% @least.each do |content| %>
+<li><%= link_to content.title,entry_path(content) %></li>
+<% end %>
+
+</ul>
+</section>
+
