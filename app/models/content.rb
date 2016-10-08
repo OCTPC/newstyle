@@ -13,7 +13,8 @@ class Content < ActiveRecord::Base
  
   belongs_to :relations
  
-   def get_trends
+  #記事取得
+  def get_trends
     ary = get_trend_articles(14)
     (ary.length).times do |j|
       title,body,url  = get_article(ary[j])
@@ -31,10 +32,7 @@ class Content < ActiveRecord::Base
         q.save
     end
   end
-  def humanize
-    Content.order(created_at: :desc).each do |a|
-    end
-  end
+  #関連サイト検索
   def testualdhfhslhelr
     cnt=0
     Content.order(created_at: :desc).each do |a|
