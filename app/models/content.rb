@@ -35,10 +35,13 @@ class Content < ActiveRecord::Base
     Content.order(created_at: :desc).each do |a|
     end
   end
-  #def testualdhfhslhelr
+  def testualdhfhslhelr
     cnt=0
     Content.order(created_at: :desc).each do |a|
        keywords=get_keywords(a.summary)
+       if keywords==nil then
+         next
+       end
        toSearch=keywords.keys.join(" ")
        File.write("lastSearch.txt", toSearch.force_encoding("UTF-8"))
        searched,raw=search(toSearch)
@@ -78,7 +81,18 @@ class Content < ActiveRecord::Base
           rel.save
        end
     end
-  #end
+    #def removeEqualData
+      ContentsRelations.all.each do |data|
+        childId=data.id
+        rel=Relationship.find(:b_id => childId)
+        cont=Contents.find(:id => rel.a_id)
+        if data.url==cont.url then
+          data.destroy
+          rel.destroy
+        end
+      end
+    #end
+  end
 
   #When content is created
   #

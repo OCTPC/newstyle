@@ -29,8 +29,8 @@ module ReturnSummary
       else
         return summary
       end
-    rescue Net::ReadTimeout => ex
-      puts "Net::ReadTimeout"
+    rescue Exception => ex
+      puts "Exception"
       return ""
     end
   end

@@ -8,18 +8,23 @@ module ReturnArticleExtract
   extend ActiveSupport::Concern
 
   def get_article(url)
-    open(url) do |io|
-      html = io.read.force_encoding('utf-8')
+    begin
+      open(url) do |io|
+        html = io.read.force_encoding('utf-8')
 
-      #エンコード自動判別
+        #エンコード自動判別
 
-      #html = html.force_encoding("Shift_JIS")
-      #html = html.force_encoding("UTF-8")
-      #logger.debug(html)
-      html = html.scrub('?')
-      body, title = ExtractContent.analyse(html)
+        #html = html.force_encoding("Shift_JIS")
+        #html = html.force_encoding("UTF-8")
+        #logger.debug(html)
+        html = html.scrub('?')
+        body, title = ExtractContent.analyse(html)
 
-      return  title,body,url
+        return  title,body,url
+      end
+    rescue Exception => ex
+      puts "Exception"
+      return "","",url
     end
   end
 end
