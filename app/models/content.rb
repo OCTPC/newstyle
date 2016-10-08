@@ -5,16 +5,14 @@ class Content < ActiveRecord::Base
   extend ReturnKeyword
   extend ReturnTrendArticles
   extend ReturnArticleExtract
+  extend Getnews
   has_many :relationship, :class_name => 'Content', :foreign_key => 'a_id', :dependent => :destroy
   has_many :relationship, :class_name => 'Content', :foreign_key => 'b_id', :dependent => :destroy
 
   has_many :keyword, :class_name => 'Keyword', :foreign_key =>'content_id', :dependent => :destroy
 
-   #def get_trends
-    
-    ary = get_trend_articles(1)
-    #logger.debug(pp ary)
-    #
+   def get_trends
+    ary = get_trend_articles(14)
     (ary.length).times do |j|
       title,body,url  = get_article(ary[j])
        q = Content.new
@@ -27,12 +25,19 @@ class Content < ActiveRecord::Base
         else
           q.summary=summary
         end
-        q.category = "news"
+        q.category = "anime"
         q.save
-    #end
-    #@least = Content.order(:created_at).limit(10)  #end
-    
+    end
   end
+  #def testualdhfhslhelr
+    Content.order(created_at: :desc).each do |a|
+       keywords=get_keywords(a.summary)
+       toSearch=keywords.values.join(" ")
+       searched,raw=search(toSearch)
+       p raw
+       break
+    end
+  #end
   #When content is created
   #
   #after_save :adding_relationship_score
