@@ -30,12 +30,47 @@ class Content < ActiveRecord::Base
     end
   end
   #def testualdhfhslhelr
+    cnt=0
     Content.order(created_at: :desc).each do |a|
        keywords=get_keywords(a.summary)
-       toSearch=keywords.values.join(" ")
+       toSearch=keywords.keys.join(" ")
+       File.write("lastSearch.txt", toSearch.force_encoding("UTF-8"))
        searched,raw=search(toSearch)
-       p raw
-       break
+       File.write("last.json", raw.force_encoding("UTF-8"))
+       if searched["items"]==nil then
+         next
+       end
+       cmp=[]
+       cmp.push(searched["items"][0])
+       cmp.push(searched["items"][1])
+       cmp.push(searched["items"][2])
+       cmp.each do |obj|
+          if obj == nil
+             next
+          end
+          url=obj["link"]
+          title,body,url = get_article(url)
+          q = ContentsRelations.new
+          q.title = title.force_encoding("utf-8")
+          q.body = body.force_encoding("utf-8")
+          q.url = url.force_encoding('UTF-8')
+          summary = get_summary(title,body).force_encoding('UTF-8')
+          if summary=="" then
+            next
+          else
+            q.summary=summary
+          end
+          q.category = a.category
+          q.save
+          
+          parentId=a.id
+          childId=q.id
+          rel=Relationship.new
+          rel.a_id=parentId
+          rel.b_id=childId
+          rel.score=relationRatio(a.body,q.body)
+          rel.save
+       end
     end
   #end
   #When content is created

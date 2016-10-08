@@ -23,3 +23,6 @@
 # Ignore vim cache files
 *.swp
 *.swo
+
+lastResult.txt
+last.json
