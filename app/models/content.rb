@@ -10,7 +10,9 @@ class Content < ActiveRecord::Base
   has_many :relationship, :class_name => 'Content', :foreign_key => 'b_id', :dependent => :destroy
 
   has_many :keyword, :class_name => 'Keyword', :foreign_key =>'content_id', :dependent => :destroy
-
+ 
+  belongs_to :relations
+ 
    def get_trends
     ary = get_trend_articles(14)
     (ary.length).times do |j|
@@ -27,6 +29,10 @@ class Content < ActiveRecord::Base
         end
         q.category = "anime"
         q.save
+    end
+  end
+  def humanize
+    Content.order(created_at: :desc).each do |a|
     end
   end
   #def testualdhfhslhelr
@@ -73,6 +79,7 @@ class Content < ActiveRecord::Base
        end
     end
   #end
+
   #When content is created
   #
   #after_save :adding_relationship_score
