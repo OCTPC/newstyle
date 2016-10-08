@@ -1,0 +1,51 @@
+p { font-size: 14px; }
+
+/*midasi*/
+.pageTitle  { font-size: 22px; }
+.heading-typeA { 
+	font-size: 22px;
+        margin:0 0 10px 0;
+	padding5px 20px;
+	border-width:2px 0;
+	border-color: #1a1a1a;
+	border-style:solid;
+	color:#2a2a2a;
+	line-height:140%;
+	font-weight:bold;
+	text-align:left; }
+.heading-typeB {
+	 font-size: 16px;
+	 border-left: solid 5px #4B0082; }
+.spaceA{
+	margin-top: 30px;}
+
+.search-form {
+	float:right;
+}
+
+#pageMain {
+	float: left;
+	min-width: 400px;
+	max-width: 600px;
+	}
+#pageSub {
+	float: right;
+	width: 250px;}
+
+#pageSub >li>a {
+	margin-left:1.5em;
+}
+#page {
+	max-width: 980px;
+	min-width: 600px;
+	margin: 0 auto;}
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+
