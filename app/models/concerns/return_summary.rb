@@ -25,11 +25,11 @@ module ReturnSummary
     body= body.keys
     if contents.empty? then
       result = contents.reject!{|item| item =~ /「.+|.+」| #{title}/ }
-      puts result
     else
       result =  contents_copy.reject!{|item| item =~ /#{title}/ }
-      puts result
     end
+    puts result
+    return result.join("")
   end
 
   def preform_text(char) #句点で必ず改行をする
