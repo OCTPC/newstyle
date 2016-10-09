@@ -33,8 +33,9 @@ class Content < ActiveRecord::Base
     end
   end
   #関連サイト検索
-  def testualdhfhslhelr
-    cnt=0
+  #def testualdhfhslhelr
+    ContentsRelations.delete_all
+    Relationship.delete_all
     Content.order(created_at: :desc).each do |a|
        keywords=get_keywords(a.summary)
        if keywords==nil then
@@ -78,7 +79,7 @@ class Content < ActiveRecord::Base
           rel.score=relationRatio(a.body,q.body)
           rel.save
        end
-    end
+    #end
     #def removeEqualData
       ContentsRelations.all.each do |data|
         childId=data.id
