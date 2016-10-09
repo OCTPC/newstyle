@@ -27,6 +27,7 @@
             <p><%= content.author %></p>
             <div class="article-body">
               <%= simple_format(content.summary) %>
+<%= link_to '詳しくみる',content.url,{:class => "btn btn-default",:target=>["_blank"]} %>
             </div>
             <span class="label label-success" hidden>肯定</span>
           </div>

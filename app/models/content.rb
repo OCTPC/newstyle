@@ -34,16 +34,17 @@ class Content < ActiveRecord::Base
   end
   #関連サイト検索
   def testualdhfhslhelr
-    cnt=0
+    Relationship.delete_all
+    ContentsRelations.delete_all
     Content.order(created_at: :desc).each do |a|
        keywords=get_keywords(a.summary)
        if keywords==nil then
          next
        end
        toSearch=keywords.keys.join(" ")
-       File.write("lastSearch.txt", toSearch.force_encoding("UTF-8"))
+       #File.write("lastSearch.txt", toSearch.force_encoding("UTF-8"))
        searched,raw=search(toSearch)
-       File.write("last.json", raw.force_encoding("UTF-8"))
+       #File.write("last.json", raw.force_encoding("UTF-8"))
        if searched["items"]==nil then
          next
        end
