@@ -91,6 +91,12 @@ class Content < ActiveRecord::Base
         end
       end
     #end
+    def reconstructContents
+      Contents.all.each do |d|
+        d.body=get_summary(d.title,d.body).force_encoding('UTF-8')
+        d.save
+      end
+    end
   end
 
   #When content is created
